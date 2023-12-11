@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Day 2 </title>
+</head>
+<body style="background-color: #212121; color:white; ">
+    <div class="heading">
+        <div class="innerhead">Monday</div>
+        <div class="innerhead">Tuesday</div>
+        <div class="innerhead">Wednesday</div>
+        <div class="innerhead">Thusday</div>
+
+    </div>
+</body>
+<script>
+    const head = document.querySelector('.heading');
+    // console.log(head);
+    // console.log(head.children);
+//    for(let i = 0;i<head.children.length;i++){
+//     console.log(head.children[i].innerHTML);
+//    }
+   
+   console.log(head.firstElementChild);
+   console.log(head.lastElementChild);
+   
+  const day =  document.querySelector('.innerhead');
+//   console.log(day)
+//   console.log(day.parentElement) // geting from child to parent 
+//   console.log(day.nextElementSibling); // getting neighbour
+
+ console.log("Nodes", head.childNodes)
+
+</script>
+</html>
