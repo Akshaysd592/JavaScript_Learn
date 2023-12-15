@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 Events </title>
+</head>
+<body>
+    <div id="wrapper" style="width: 100vw; height: 100vh; background-color: black; color:white;">
+        <h1>Going well</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+   
+</body>
+<script>
+
+  let Intervalset =NaN ; // to be Passed when stoping interval so global
+
+
+function genNumber(){
+   return Math.round(Math.random()*256+1);// starting from 1 to 255
+}
+
+
+function generateColor(){
+    return `rgb(${genNumber()},${genNumber()},${genNumber()})`;
+}
+
+function showColor(){
+    Intervalset = setInterval(() => {
+        console.log(`${generateColor()}`)
+      document.querySelector('#wrapper').style.backgroundColor  = generateColor();
+    }, (2000));
+}
+
+
+
+//show color button 
+ document.querySelector('#start').addEventListener('click',
+    ()=>showColor()
+ )
+
+
+
+// stop color button
+const stopShowColor  = ()=>{
+
+    if(isNaN(Intervalset) != true){ // if Intervalset is having value other than NaN then work
+        clearInterval(Intervalset);  // clear interval
+   console.log("Stopped Interval")
+   document.querySelector('#wrapper').style.backgroundColor  = "black";
+        Intervalset = NaN;
+    }
+    
+} 
+
+document.querySelector('#stop').addEventListener('click',
+  ()=> stopShowColor()
+)
+
+</script>
+</html>

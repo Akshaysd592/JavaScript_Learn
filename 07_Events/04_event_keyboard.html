@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard magic</title>
+</head>
+
+<body>
+    <div
+        style="height:100vh; width: 100vw; background-color: black; display: flex; flex-direction: column; justify-content: center; align-items: center; color:white">
+        <div class="innerbox">
+
+            <div class="magictext">
+                Click on the keyboard and See the Magic
+            </div>
+        </div>
+
+    </div>
+</body>
+<script>
+    const innerbox = document.querySelector('.innerbox');
+
+    window.addEventListener('keydown', function (e) {
+        innerbox.innerHTML = `<div> 
+
+             <table>
+                <tr>
+                    <th>  Key  </th>
+                    <th> KeyCode </th>
+                    <th> code </th>
+                </tr>
+                <tr>
+                    <td> ${e.key === ' ' ? "Space" : e.key}</td>
+                    <td> ${e.keyCode}  </td>
+                    <td> ${e.code}</td>
+                </tr>     
+            </div>
+            `
+    })
+
+</script>
+
+</html>

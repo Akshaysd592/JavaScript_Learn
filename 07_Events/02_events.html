@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events 2</title>
+</head>
+<body>
+    <h1>Going Well</h1>
+    <button id="stop">
+        Stop
+    </button>
+</body>
+ <script>
+    // async function
+    
+    // setTimeout(function(){ // work after some time work only once
+    //     console.log("Akshay")
+    // },2000) 
+
+    const sayAkshay = function(){
+        console.log("Akshay");
+    }
+
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "All the best"
+    }
+
+    setTimeout(sayAkshay,2000);
+   const changeMe =  setTimeout(changeText,2000); // passing function reference so changeText not changeText()
+   
+   document.querySelector('#stop').addEventListener('click',
+   function(){
+      clearTimeout(changeMe);
+      console.log('Stopped');
+   })
+
+ </script>
+</html>
