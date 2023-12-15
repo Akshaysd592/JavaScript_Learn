@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in Javascript</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li >
+                <img  id="firstimage" width="200px" src="Images/image1.jpg"  alt="" />
+            </li>
+        </ul>
+    </div>
+    
+</body>
+ <script>
+    // not using getElementsByClassName because it can return multiple values
+    // document.getElementById('firstimage').onclick = function (){
+    //     alert("hello ji")
+    // }
+    // console.log(document.getElementById('firstimage'))
+
+
+    // addeventListner is mostly used
+    // document.getElementById('firstimage').addEventListener('click',function(){
+    //     alert("hello ji with addeventlistner");
+    // },false) // by defaut false
+
+   // earlier time
+    //    attackEvent()
+    // jQuery - on
+
+
+    // document.getElementById('firstimage').addEventListener('click',function(e){
+    //     // this event e provides multiple functions in it
+    //     console.log(e);
+    //     e.preventDefault();
+    //     e.stopPropagation(); // stop to propagate in bubbling phase 
+    // },false) // by default false where bubbling phase work first else if true then capturing phase done first 
+    // Learn about below properties obtained : 
+    // type , timestamp , preventDefault
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+     //altkey , ctrlkey, shiftkey , keyCode 
+  
+       // To remove the selected node  
+     document.querySelector('#firstimage').addEventListener('click',function(e){
+            console.log(e.target.parentNode);// parentNode will make jump to parent tag of selected node
+            console.log(e.target.id);
+            console.log(e.target.tagName);
+            let removeIt = e.target.parentNode;
+            // removeIt.remove() // to remove this node including parentNode
+            // or
+            removeIt.parentNode.removeChild(removeIt);
+
+     })
+ </script>
+</html>
