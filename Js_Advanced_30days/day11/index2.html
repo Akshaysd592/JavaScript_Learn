@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Event Handling</title>
+    </head>
+    <body>
+
+        <div>
+            <h1>hello ji </h1>
+        </div>
+
+       <div id="items">
+         <p>hello everyone </p>
+         <p>great one</p>
+       </div>
+      <select  id="item">
+        <option value="hello">hello</option>
+        <option value="great">great </option>
+      </select>
+
+    </body>
+    <!-- <script src="script.js"></script> -->
+     <script>
+     
+     let accessitem = document.getElementById('items')
+      accessitem.addEventListener('click',(e)=>{
+      (e.target.addEventListener('click',()=>{
+            console.log("clicked ")
+        }))
+      })
+
+      let accessselect = document.getElementById('item');
+     
+      accessselect.addEventListener('click',(e)=>{
+        console.log(e.target.value)
+      })
+    
+   
+     
+      
+     </script>
+</html>

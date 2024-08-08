@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <title>This is being used for dom manipulation</title>
+
+</head>
+<body>
+
+     <div class="container">
+        <p class="mark" id="title">hello </p>
+     </div>
+     <ul>
+        <li>
+            key
+        </li>
+        <li>
+            values
+        </li>
+        <button  id="btn">hello ji</button>
+     </ul>
+</body>
+<script>
+
+    // let textcontent = document.getElementById('title')
+    // // document.write(textcontent.outerHTML = "hello ji")
+    // // console.log(textcontent.classList.add('marko'))
+    // // console.log(textcontent.classList)
+    // let classcontent = document.getElementsByClassName('container')
+    // console.log(classcontent[0].style.backgroundColor = 'red')
+  
+    // let newdiv = document.createElement("div")
+    // let data = document.createTextNode = "how are you"
+    // newdiv.append(data);
+    // console.log(newdiv)
+    // classcontent[0].append(newdiv)
+
+
+    // let accesslist = document.getElementsByTagName('ul')
+    // console.log(accesslist[0])
+    // let newlist= document.createElement('li') 
+    // newlist.append("hello ji")
+    // accesslist[0].append(newlist)
+
+    // // accesslist[0].remove()
+    //  let accessli = document.getElementsByTagName('li')
+    //  accessli[0].remove()
+    //  accessli[accessli.length-1].remove()
+
+    //   let accesstitle = document.getElementById('title');
+    //   accesstitle.setAttribute('width','30%')
+    //   accessli[0].setAttribute('height','30px')
+    //   console.log(accessli[0])
+    //   accesstitle.classList.remove('mark')
+    //   accesstitle.classList.add('newclass')
+    //   console.log(accesstitle)
+
+
+
+    //    let queryselect = document.querySelectorAll('div')
+    //    console.log(queryselect)
+
+    
+    let accessbtn = document.getElementsByTagName('button')
+    accessbtn[0].addEventListener("dblclick",(e)=>{
+        changetitle(e);
+    })
+
+    accessbtn[0].addEventListener("mouseleave",()=>{
+        changetooriginal();
+
+    })
+
+    function changetooriginal(){
+        let accesstitle = document.getElementById('title')
+        accesstitle.innerHTML = "hello"
+        accessbtn[0].style.borderColor = 'black'
+          console.log(accessbtn)
+    }
+
+    function changetitle(){
+        let accesstitle = document.getElementById('title')
+        console.log(accesstitle)
+          accesstitle.innerHTML = "how are you bro"
+          accessbtn[0].style.borderColor = 'red'
+          console.log(accessbtn)
+    }
+    
+</script>
+
+
+</html>
